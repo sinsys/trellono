@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-import Card from './components/card/Card';
 import List from './components/list/List';
 import './App.css';
 
@@ -23,7 +22,7 @@ class App extends Component {
           {store.lists.map((list) => (
             <List
               title={list.header}
-              cards={list.cardIds}
+              cards={list.cardIds.map(card => store.allCards[card])}
               id={"list-" + list.id}
             />
           ))}
