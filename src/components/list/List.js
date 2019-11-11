@@ -4,8 +4,20 @@ import './List.css';
 
 export default function List(props){
 	return (
-		<div className="List">
-			
-		</div>
+		<section className="List">
+			<header class="List-header">
+				{props.title}
+			</header>
+			<div className="List-cards">
+				{props.cards.map(card => (
+					<p>{card}</p>
+				))}
+				{/* 
+					The <p> is just filler and will be a <Card />.
+					{card} will get passed in as a prop to display the correct card
+				*/}
+
+			</div>
+		</section>
 	)	
 }

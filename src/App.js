@@ -16,7 +16,19 @@ class App extends Component {
     console.log(store);
     return (
       <main className="App">
-        {/* We will need to render 4 <List /> elements here */}
+        <header className="App-header">
+          <h1>TrellOhNo!</h1>
+        </header>
+        <section className="App-list">
+          {store.lists.map((list) => (
+            <List
+              title={list.header}
+              cards={list.cardIds}
+              id={"list-" + list.id}
+            />
+          ))}
+        </section>
+        
       </main>
     )
   }
